@@ -1,0 +1,1 @@
+"Great, the Next.js app is successfully fetching the WordPress site title and description using GraphQL. What's the next logical step to build out this frontend? Perhaps fetching and displaying a list of posts, or setting up routing for individual post pages?"
