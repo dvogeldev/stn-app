@@ -10,15 +10,15 @@ export function HeroSection() {
       {/* Background Image */}
       <Image
         src="/still_image.jpg" // Path to your hero image
-        alt="St. Nicholas Orthodox Church Exterior"
-        layout="fill" // Makes the image fill the parent container
-        objectFit="cover" // Ensures the image covers the section, cropping if necessary
+        alt="St. Nicholas Orthodox Church Interior"
+        fill // Makes the image fill the parent container
+        style={{ objectFit: 'cover' }} // Ensures the image covers the section, cropping if necessary
         quality={80} // Adjust image quality for performance
         className="z-0" // Place image behind text
       />
 
       {/* Overlay Content */}
-      <div className="relative z-10 p-4 bg-black bg-opacity-40 rounded-lg max-w-3xl mx-auto">
+      <div className="relative z-10 p-4 bg-black/40 bg-opacity-70 rounded-lg max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
           Welcome to St. Nicholas Orthodox Church
         </h1>

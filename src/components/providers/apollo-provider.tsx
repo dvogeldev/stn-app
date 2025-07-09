@@ -13,6 +13,7 @@ export function ApolloProvider({ children }: ApolloProviderProps) {
   const client = initializeApollo();
 
   // --- ADD THESE CONSOLE.LOGS ---
+  /*
   console.log("ApolloProvider receiving children:");
   console.log("Type of children:", typeof children);
   console.log("Is children an array?", Array.isArray(children));
@@ -22,6 +23,7 @@ export function ApolloProvider({ children }: ApolloProviderProps) {
   } else {
       console.log("Children (if single):", children);
   }
+  */
   // ------------------------------
 
   return (
