@@ -111,6 +111,14 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
 }
+/* src/app/globals.css */
+.container {
+  max-width: 1200px; /* Or whatever max-width you prefer */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* Optional: adds some padding on smaller screens */
+  padding-right: 1rem; /* Optional: adds some padding on smaller screens */
+}
 
 @layer base {
   * {
