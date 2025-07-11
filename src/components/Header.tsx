@@ -8,12 +8,10 @@ import { TopBar } from '@/components/TopBar';
 
 export function Header() {
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/events', label: 'Events' },
+    { href: '/faith', label: 'Our Faith' },
+    { href: '/community', label: 'Our Community' },
+    { href: '/church', label: 'Our Church' },
     { href: '/contact', label: 'Contact' },
-    { href: '/donate', label: 'Donate' },
   ];
   return (
     <div> {/* Keep this div as discussed, not a fragment */}
@@ -21,7 +19,7 @@ export function Header() {
       <header className="border-b bg-white">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo or Site Title */}
-          <Link href="/" className="flex items-center space-x-2 text-xl font-semibold text-gray-900">
+          <Link href="/" className="flex items-center space-x-2 text-xl text-serif font-semibold text-gray-900">
             {/* Replace the placeholder with Next.js Image component */}
             <Image
               src="/stn-icon-favicon.svg" // Path relative to the `public` folder
@@ -43,7 +41,12 @@ export function Header() {
             ))}
             <li>
                 <Button asChild size="sm">
-                    <Link href="/donate">Donate</Link>
+                    <Link href="/dlive">Watch Live</Link>
+                </Button>
+            </li>
+            <li>
+                <Button asChild size="sm">
+                    <Link href="/new-visitors">New Here?</Link>
                 </Button>
             </li>
           </ul>
