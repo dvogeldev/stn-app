@@ -11,27 +11,31 @@ export function Header() {
     { href: '/faith', label: 'Our Faith' },
     { href: '/community', label: 'Our Community' },
     { href: '/church', label: 'Our Church' },
-    { href: '/contact', label: 'Contact' },
   ];
   return (
-    <div> {/* Keep this div as discussed, not a fragment */}
+    <div>
       <TopBar />
       <header className="border-b bg-white">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo or Site Title */}
           <Link href="/" className="flex items-center space-x-2 text-xl text-serif font-semibold text-gray-900">
-            {/* Replace the placeholder with Next.js Image component */}
-            <Image
-              src="/stn-icon-favicon.svg" // Path relative to the `public` folder
-              alt="St. Nicholas Orthodox Church Logo"
-              width={32} // Set appropriate width for your logo
-              height={32} // Set appropriate height for your logo
-              className="h-8 w-8" // Tailwind classes for visual sizing if needed
-            />
-            <span>St. Nicholas Orthodox Church</span>
+            {/* Wrap the Image and the div in a single parent element */}
+            <> {/* This Fragment wraps the two direct children */}
+              <Image
+                src="/stn-icon-favicon.svg"
+                alt="St. Nicholas Orthodox Church Logo"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+              />
+              <div>
+                <span>St. Nicholas Orthodox Church</span>
+                <p className="text-sm font-normal text-gray-600">Grand Rapids, MI</p>
+              </div>
+            </>
           </Link>
 
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-6 items-center">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-gray-700 hover:text-gray-900 transition-colors">
@@ -40,12 +44,12 @@ export function Header() {
               </li>
             ))}
             <li>
-                <Button asChild size="sm">
+                <Button asChild size="sm" className="bg-orange-100 text-orange-800 hover:bg-orange-200 rounded-md">
                     <Link href="/dlive">Watch Live</Link>
                 </Button>
             </li>
             <li>
-                <Button asChild size="sm">
+                <Button asChild size="sm" className="bg-teal-700 text-white hover:bg-teal-800 rounded-md">
                     <Link href="/new-visitors">New Here?</Link>
                 </Button>
             </li>
@@ -71,6 +75,12 @@ export function Header() {
                     </Link>
                   ))}
                    <Button asChild>
+                      <Link href="/dlive">Watch Live</Link>
+                  </Button>
+                  <Button asChild>
+                      <Link href="/new-visitors">New Here?</Link>
+                  </Button>
+                  <Button asChild>
                       <Link href="/donate">Donate</Link>
                   </Button>
                 </nav>
@@ -79,6 +89,6 @@ export function Header() {
           </div>
         </nav>
       </header>
-    </div> // CHANGE THIS FRAGMENT TO A DIV
+    </div>
   );
 }
