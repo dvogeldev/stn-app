@@ -1,5 +1,6 @@
 import React from 'react';
 import { Church } from 'lucide-react'; // Importing Lucide icon for the logo
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 export const Footer = () => {
   return (
@@ -45,13 +46,21 @@ export const Footer = () => {
         </div>
 
         {/* Copyright and Credits */}
-        <div className="text-center text-gray-500 text-sm">
-          <p className="mb-2 rounded-lg">
-            Made with <span className="text-red-500">&hearts;</span> for our Orthodox community
-          </p>
-          <p className="rounded-lg">
-            &copy; 2025 St. Nicholas Orthodox Church. All rights reserved.
-          </p>
+        <div className="flex flex-col sm:flex-row items-center justify-between text-gray-500 text-sm">
+          <div className="text-center sm:text-left mb-4 sm:mb-0">
+            <p className="mb-2 rounded-lg">
+              Made with <span className="text-red-500">&hearts;</span> for our Orthodox community
+            </p>
+            <p className="rounded-lg">
+              &copy; 2025 St. Nicholas Orthodox Church. All rights reserved.
+            </p>
+          </div>
+          
+          {/* Development Theme Switcher */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-gray-600">Theme:</span>
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </footer>

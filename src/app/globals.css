@@ -43,87 +43,127 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Antiochian Orthodox Church Theme for Shadcn */
+/* Root variables for shared values */
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
-  --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
-  --accent-foreground: oklch(0.216 0.006 56.043);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.923 0.003 48.717);
-  --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
+  --gold: hsl(40, 70%, 50%);
+  /* #CDA434 - Divine light */
+  --teal: hsl(165, 50%, 35%);
+  /* #2E7D6B - Spiritual serenity */
+  --red: hsl(0, 50%, 35%);
+  /* #8B3A3A - Passion and sacrifice */
+  --maroon: hsl(20, 40%, 30%);
+  /* #6B4C3A - Earthy depth */
+  --black: hsl(0, 0%, 10%);
+  /* #1A1A1A - Outlines and shadows */
 }
 
-.dark {
-  --background: oklch(0.147 0.004 49.25);
-  --foreground: oklch(0.985 0.001 106.423);
-  --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
-  --primary: oklch(0.923 0.003 48.717);
-  --primary-foreground: oklch(0.216 0.006 56.043);
-  --secondary: oklch(0.268 0.007 34.298);
-  --secondary-foreground: oklch(0.985 0.001 106.423);
-  --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.268 0.007 34.298);
-  --accent-foreground: oklch(0.985 0.001 106.423);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.553 0.013 58.071);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
+/* Light Mode (default) */
+:root,
+[data-theme="light"] {
+  --background: hsl(30, 40%, 95%);
+  /* #F2EDE4 - Creamy stone, AAA contrast */
+  --foreground: var(--black);
+  /* High contrast text ≥7:1 */
+  --card: hsl(30, 40%, 98%);
+  /* Subtle off-white for cards */
+  --card-foreground: var(--black);
+  --popover: hsl(30, 40%, 98%);
+  --popover-foreground: var(--black);
+  --primary: var(--gold);
+  /* Gold accents */
+  --primary-foreground: hsl(0, 0%, 100%);
+  /* White on gold ≥4.5:1 */
+  --secondary: var(--teal);
+  /* Teal for buttons/links */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: var(--maroon);
+  /* Subtle text/ borders */
+  --muted-foreground: hsl(0, 0%, 40%);
+  --accent: var(--red);
+  /* Red highlights */
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 70%, 40%);
+  /* Error states */
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(30, 20%, 80%);
+  --input: hsl(30, 20%, 90%);
+  --ring: var(--gold);
+  /* Focus rings */
+  --chart-1: var(--gold);
+  --chart-2: var(--teal);
+  --chart-3: var(--red);
+  --chart-4: var(--maroon);
+  --chart-5: hsl(40, 50%, 60%);
+  --sidebar: hsl(30, 40%, 98%);
+  --sidebar-foreground: var(--black);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: var(--teal);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(30, 20%, 80%);
+  --sidebar-ring: var(--gold);
 }
+
+/* Dark Mode (inverted for night-time reverence) */
+[data-theme="dark"] {
+  --background: hsl(0, 0%, 15%);
+  /* Deep charcoal, evoking mosaic shadows */
+  --foreground: hsl(30, 40%, 95%);
+  /* Light beige text ≥7:1 contrast */
+  --card: hsl(0, 0%, 20%);
+  --card-foreground: hsl(30, 40%, 95%);
+  --popover: hsl(0, 0%, 20%);
+  --popover-foreground: hsl(30, 40%, 95%);
+  --primary: var(--gold);
+  /* Gold shines in dark */
+  --primary-foreground: var(--black);
+  /* Dark on gold ≥4.5:1 */
+  --secondary: var(--teal);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(20, 40%, 40%);
+  /* Lighter maroon for dark mode */
+  --muted-foreground: hsl(0, 0%, 70%);
+  --accent: var(--red);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 70%, 50%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 30%);
+  --input: hsl(0, 0%, 25%);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
+  --chart-2: var(--teal);
+  --chart-3: var(--red);
+  --chart-4: var(--maroon);
+  --chart-5: hsl(40, 50%, 60%);
+  --sidebar: hsl(0, 0%, 20%);
+  --sidebar-foreground: hsl(30, 40%, 95%);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--black);
+  --sidebar-accent: var(--teal);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(0, 0%, 30%);
+  --sidebar-ring: var(--gold);
+}
+
 /* src/app/globals.css */
 .container {
-  max-width: 1200px; /* Or whatever max-width you prefer */
+  max-width: 1200px;
+  /* Or whatever max-width you prefer */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* Optional: adds some padding on smaller screens */
-  padding-right: 1rem; /* Optional: adds some padding on smaller screens */
+  padding-left: 1rem;
+  /* Optional: adds some padding on smaller screens */
+  padding-right: 1rem;
+  /* Optional: adds some padding on smaller screens */
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

@@ -2,13 +2,13 @@ import React from 'react';
 
 export const AboutParish = () => { // Changed to named export
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 font-sans">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title and Description */}
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-6 rounded-lg">
+        <h2 className="text-4xl font-extrabold text-foreground mb-6 rounded-lg">
           About Our Parish
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto mb-12 rounded-lg">
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto mb-12 rounded-lg">
           We are a vibrant Orthodox Christian community in Grand Rapids, part of the
           Antiochian Orthodox Christian Archdiocese of North America.
         </p>
@@ -16,8 +16,8 @@ export const AboutParish = () => { // Changed to named export
         {/* Feature Cards Container */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Worship Card */}
-          <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-50 text-blue-600 mb-6">
+          <div className="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-secondary/10 text-secondary mb-6">
               {/* Heart Icon (Placeholder SVG) */}
               <svg
                 className="h-8 w-8"
@@ -34,8 +34,8 @@ export const AboutParish = () => { // Changed to named export
                 ></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4 rounded-lg">Worship</h3>
-            <p className="text-gray-600 text-center rounded-lg">
+            <h3 className="text-xl font-semibold text-card-foreground mb-4 rounded-lg">Worship</h3>
+            <p className="text-muted-foreground text-center rounded-lg">
               We gather weekly for Divine Liturgy, following
               the ancient traditions passed down through the
               centuries of Orthodox Christianity.
@@ -43,8 +43,8 @@ export const AboutParish = () => { // Changed to named export
           </div>
 
           {/* Community Card */}
-          <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-red-50 text-red-600 mb-6">
+          <div className="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 text-accent mb-6">
               {/* Users Icon (Placeholder SVG) */}
               <svg
                 className="h-8 w-8"
@@ -61,8 +61,8 @@ export const AboutParish = () => { // Changed to named export
                 ></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4 rounded-lg">Community</h3>
-            <p className="text-gray-600 text-center rounded-lg">
+            <h3 className="text-xl font-semibold text-card-foreground mb-4 rounded-lg">Community</h3>
+            <p className="text-muted-foreground text-center rounded-lg">
               Our parish family welcomes all who seek to
               grow in faith, whether you're new to Orthodoxy
               or a lifelong member.
@@ -70,8 +70,8 @@ export const AboutParish = () => { // Changed to named export
           </div>
 
           {/* Learning Card */}
-          <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-50 text-yellow-600 mb-6">
+          <div className="flex flex-col items-center p-8 bg-card rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mb-6">
               {/* Book Icon (Placeholder SVG) */}
               <svg
                 className="h-8 w-8"
@@ -88,8 +88,8 @@ export const AboutParish = () => { // Changed to named export
                 ></path>
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4 rounded-lg">Learning</h3>
-            <p className="text-gray-600 text-center rounded-lg">
+            <h3 className="text-xl font-semibold text-card-foreground mb-4 rounded-lg">Learning</h3>
+            <p className="text-muted-foreground text-center rounded-lg">
               We offer classes, study groups, and
               educational opportunities to deepen your
               understanding of Orthodox faith and practice.
