@@ -54,13 +54,13 @@ export const EventsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 font-sans">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title and Description */}
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4 rounded-lg">
+        <h2 className="text-4xl font-extrabold text-foreground mb-4 rounded-lg">
           Upcoming Events
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto mb-12 rounded-lg">
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto mb-12 rounded-lg">
           Join us for worship, fellowship, and spiritual growth throughout the liturgical year.
         </p>
 

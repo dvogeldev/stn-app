@@ -45,13 +45,13 @@ export const AnnouncementsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 font-sans">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title and Description */}
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4 rounded-lg">
+        <h2 className="text-4xl font-extrabold text-foreground mb-4 rounded-lg">
           Latest Announcements
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto mb-12 rounded-lg">
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto mb-12 rounded-lg">
           Explore insights on Orthodox faith, worship, and community life from our clergy and parish members.
         </p>
 
@@ -71,7 +71,7 @@ export const AnnouncementsSection = () => {
         <div className="mt-12">
           <a
             href="/announcements" // Link to a page with all announcements
-            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:px-10 text-lg transition-colors duration-300 shadow-md"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 md:py-4 md:px-10 text-lg transition-colors duration-300 shadow-md"
           >
             View All Announcements
             <svg className="ml-3 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
