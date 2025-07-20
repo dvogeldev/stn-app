@@ -8,6 +8,7 @@ export const LivingFaithCommunity = () => { // Changed to named export
         <div className="flex justify-center md:justify-end">
           <img
             src="https://placehold.co/600x400/E0E0E0/333333?text=Church+Community" // Placeholder image URL
+            src="/parish_family_cropped.webp"
             alt="Church Community"
             className="rounded-xl shadow-lg max-w-full h-auto border border-border"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}

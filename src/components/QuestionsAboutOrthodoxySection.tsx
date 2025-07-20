@@ -2,7 +2,7 @@ import React from 'react';
 
 export const QuestionsAboutOrthodoxySection = () => {
   return (
-    <section className="py-20 px-6 sm:px-8 lg:px-12 bg-card border border-border font-sans rounded-xl shadow-xl mx-auto max-w-7xl mt-16">
+    <section className="mb-16 py-20 px-6 sm:px-8 lg:px-12 bg-card border border-border font-sans rounded-xl shadow-xl mx-auto max-w-7xl mt-16">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-card-foreground mb-4 rounded-lg">
           Questions About Orthodoxy?

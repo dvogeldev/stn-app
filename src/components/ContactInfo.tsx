@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MapPin, Mail, Phone, Clock, ArrowRight } from 'lucide-react'; // Importing Lucide icons
 
 export const ContactInfo = () => {
@@ -7,19 +8,15 @@ export const ContactInfo = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image and "Find Us Here" Section - Left Column */}
         <div className="relative bg-muted border border-border rounded-xl shadow-lg overflow-hidden h-[400px] md:h-[500px]">
-          <img
-            src="/images/image_ad9f9c.png" // Path to your uploaded image in the public directory
+          <Image
+            src="/St. Nicholas Church in Sunlight.png"
             alt="Exterior view of St. Nicholas Orthodox Church building"
-            className="absolute inset-0 w-full h-full object-cover"
-            onError={(e) => { e.currentTarget.src = "https://placehold.co/600x400/E0E0E0/333333?text=Church+Exterior"; }}
+            fill
+            className="object-cover"
+            priority
           />
           {/* Overlay with text and button */}
           <div className="absolute inset-0 bg-orthodox-black/40 flex flex-col justify-end p-6 text-white">
-            <p className="text-sm mb-4">
-              Exterior view of St. Nicholas Orthodox Church building at 2250 E. Paris SE, Grand Rapids,
-              showing the beautiful Byzantine architecture with traditional Orthodox domes, crosses,
-              and arched entrance colonnade surrounded by landscaped grounds
-            </p>
             <a
               href="https://maps.app.goo.gl/your-church-location" // Replace with actual Google Maps link
               target="_blank"

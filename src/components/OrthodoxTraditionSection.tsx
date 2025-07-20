@@ -40,7 +40,7 @@ export const OrthodoxTraditionSection = () => {
         <div className="flex justify-center md:justify-end order-1 md:order-2">
           <div className="bg-card border border-border rounded-xl shadow-lg p-4 max-w-sm w-full">
             <img
-              src="/images/image_ba595e.jpg" // Path to your uploaded image in the public directory
+              src="/christ_icon.webp" // Path to your uploaded image in the public directory
               alt="Christ with the Church Fathers - Byzantine tradition"
               className="rounded-lg max-w-full h-auto object-cover mb-4"
               onError={(e) => { e.currentTarget.src = "https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}

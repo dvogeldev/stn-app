@@ -45,14 +45,14 @@ export function Header() {
               </li>
             ))}
             <li>
-                <Button asChild size="sm" className="bg-accent-100 text-accent-800 hover:bg-accent-200 rounded-md">
-                    <Link href="/dlive">Watch Live</Link>
-                </Button>
+              <Button asChild size="sm" className="bg-accent-100 text-accent-800 hover:bg-accent-200 rounded-md">
+                <Link href="/dlive">Watch Live</Link>
+              </Button>
             </li>
             <li>
-                <Button asChild size="sm" className="bg-primary-600 text-white hr:bg-teal-800 rounded-md">
-                    <Link href="/new-visitors">New Here?</Link>
-                </Button>
+              <Button asChild size="sm" className="bg-primary-600 text-white hr:bg-teal-800 rounded-md">
+                <Link href="/new-visitors">New Here?</Link>
+              </Button>
             </li>
           </ul>
 
@@ -75,14 +75,14 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                   <Button asChild>
-                      <Link href="/dlive">Watch Live</Link>
+                  <Button asChild>
+                    <Link href="/dlive">Watch Live</Link>
                   </Button>
                   <Button asChild>
-                      <Link href="/new-visitors">New Here?</Link>
+                    <Link href="/new-visitors">New Here?</Link>
                   </Button>
                   <Button asChild>
-                      <Link href="/donate">Donate</Link>
+                    <Link href="/donate">Donate</Link>
                   </Button>
                 </nav>
               </SheetContent>

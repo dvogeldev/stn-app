@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Send, Car, ParkingCircle, Accessibility, Users, Landmark } from 'lucide-react'; // Importing Lucide icons
+import Image from 'next/image';
+import { Send, Car, ParkingCircle, Landmark } from 'lucide-react'; // Importing Lucide icons
 
 export const LocationDirections = () => {
   return (
@@ -21,13 +22,15 @@ export const LocationDirections = () => {
         </div>
 
         {/* Map Placeholder */}
-        <div className="bg-muted border border-border rounded-xl shadow-lg h-[300px] md:h-[450px] flex items-center justify-center text-muted-foreground text-xl mb-8 overflow-hidden">
+        <div className="bg-muted border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground text-xl mb-8 overflow-hidden">
           {/* You would integrate a real map component (e.g., Google Maps, Leaflet) here */}
-          <img
-            src="/images/image_ad9b7e.jpg" // Placeholder image for the map area
+          <Image
+            src="/st-nick-gmap.png" // Placeholder image for the map area
             alt="Map of Church Location"
-            className="w-full h-full object-cover"
-            onError={(e) => { e.currentTarget.src = "https://placehold.co/1200x450/D1D5DB/4B5563?text=Map+Placeholder"; }}
+            width={1200}
+            height={450}
+            className="w-full h-auto"
+            priority
           />
         </div>
 
