@@ -10,7 +10,7 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/still_image.jpg"
+          src="/images/still_image.jpg"
           alt="Interior of St. Nicholas Orthodox Church showing the beautiful iconostasis with traditional Orthodox icons, ornate wooden carvings, and a priest conducting Divine Liturgy at the altar"
           fill
           className="object-cover"

@@ -10,7 +10,7 @@ export const AnnouncementsSection = () => {
     date: 'December 15, 2024',
     readTime: '5 min read',
     category: 'Worship',
-    imageUrl: '/images/image_b9d948_featured.jpg', // Placeholder for featured image
+    imageUrl: '/images/parish-family.jpg',
   };
 
   const latestAnnouncements = [
@@ -21,7 +21,7 @@ export const AnnouncementsSection = () => {
       date: 'December 12, 2024',
       readTime: '4 min read',
       category: 'Spiritual Life',
-      imageUrl: '/images/image_b9d948_lent.jpg', // Placeholder image
+      imageUrl: '/images/christ_icon.webp',
     },
     {
       title: 'Icons: Windows to Heaven',
@@ -30,7 +30,7 @@ export const AnnouncementsSection = () => {
       date: 'December 10, 2024',
       readTime: '6 min read',
       category: 'Theology',
-      imageUrl: '/images/image_b9d948_icons.jpg', // Placeholder image
+      imageUrl: '/images/orthodox_tradition.webp',
     },
     {
       title: 'Volunteer Opportunities for Pascha',
@@ -39,7 +39,7 @@ export const AnnouncementsSection = () => {
       date: 'December 8, 2024',
       readTime: '3 min read',
       category: 'Community',
-      imageUrl: '/images/image_b9d948_volunteer.jpg', // Placeholder image
+      imageUrl: '/images/parish_family_cropped.webp',
     },
     // Add more announcements as needed
   ];

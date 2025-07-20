@@ -25,7 +25,7 @@ export const LocationDirections = () => {
         <div className="bg-muted border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground text-xl mb-8 overflow-hidden">
           {/* You would integrate a real map component (e.g., Google Maps, Leaflet) here */}
           <Image
-            src="/st-nick-gmap.png" // Placeholder image for the map area
+            src="/images/st-nick-gmap.png" // Placeholder image for the map area
             alt="Map of Church Location"
             width={1200}
             height={450}

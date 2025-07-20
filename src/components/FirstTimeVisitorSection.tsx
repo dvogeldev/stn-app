@@ -14,7 +14,7 @@ export const FirstTimeVisitorSection = () => {
         {/* Image Section - Right Column */}
         <div className="relative bg-muted border border-border rounded-xl shadow-lg overflow-hidden flex items-end justify-start h-[400px] md:h-auto">
           <Image
-            src="/images/image_ad39dc.jpg" // Path to your uploaded image in the public directory
+            src="/images/welcoming-new-visitors.webp"
             alt="Family entering church"
             fill
             className="object-cover"

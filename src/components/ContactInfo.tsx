@@ -9,7 +9,7 @@ export const ContactInfo = () => {
         {/* Image and "Find Us Here" Section - Left Column */}
         <div className="relative bg-muted border border-border rounded-xl shadow-lg overflow-hidden h-[400px] md:h-[500px]">
           <Image
-            src="/St. Nicholas Church in Sunlight.png"
+            src="/images/St. Nicholas Church in Sunlight.png"
             alt="Exterior view of St. Nicholas Orthodox Church building"
             fill
             className="object-cover"

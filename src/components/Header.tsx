@@ -19,11 +19,11 @@ export function Header() {
       <header className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo or Site Title */}
-          <Link href="/" className="flex items-center space-x-2 text-xl text-serif font-semibold text-primary-800">
+          <Link href="/" className="flex items-center space-x-2 text-xl text-serif font-semibold text-primary-800 dark:text-primary-200">
             {/* Wrap the Image and the div in a single parent element */}
             <> {/* This Fragment wraps the two direct children */}
               <Image
-                src="/stn-icon-favicon.svg"
+                src="/assets/stn-icon-favicon.svg"
                 alt="St. Nicholas Orthodox Church Logo"
                 width={32}
                 height={32}
@@ -31,7 +31,7 @@ export function Header() {
               />
               <div>
                 <span>St. Nicholas Orthodox Church</span>
-                <p className="text-sm font-normal text-neutral-600">Grand Rapids, MI</p>
+                <p className="text-sm font-normal text-neutral-600 dark:text-neutral-300">Grand Rapids, MI</p>
               </div>
             </>
           </Link>

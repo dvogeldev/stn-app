@@ -41,7 +41,7 @@ export const OrthodoxTraditionSection = () => {
         <div className="flex justify-center md:justify-end order-1 md:order-2">
           <div className="bg-card border border-border rounded-xl shadow-lg p-4 max-w-sm w-full">
             <Image
-              src="/christ_icon.webp" // Path to your uploaded image in the public directory
+              src="/images/christ_icon.webp" // Path to your uploaded image in the public directory
               alt="Christ with the Church Fathers - Byzantine tradition"
               width={400}
               height={300}

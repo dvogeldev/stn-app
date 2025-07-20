@@ -8,7 +8,7 @@ export const LivingFaithCommunity = () => { // Changed to named export
         {/* Image Section */}
         <div className="flex justify-center md:justify-end">
           <Image
-            src="/parish_family_cropped.webp"
+            src="/images/parish_family_cropped.webp"
             alt="Church Community"
             width={600}
             height={400}
