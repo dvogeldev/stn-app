@@ -12,7 +12,7 @@ const createApolloClient = () => {
   });
 };
 
-export function initializeApollo(initialState = null) {
+export function initializeApollo(initialState: NormalizedCacheObject | null = null) {
   const _apolloClient = apolloClient ?? createApolloClient();
   if (initialState) {
     const existingCache = _apolloClient.extract();
