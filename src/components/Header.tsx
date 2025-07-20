@@ -45,12 +45,12 @@ export function Header() {
               </li>
             ))}
             <li>
-              <Button asChild size="sm" className="bg-accent-100 text-accent-800 hover:bg-accent-200 rounded-md">
+              <Button asChild variant="secondary" size="sm">
                 <Link href="/dlive">Watch Live</Link>
               </Button>
             </li>
             <li>
-              <Button asChild size="sm" className="bg-primary-600 text-white hr:bg-teal-800 rounded-md">
+              <Button asChild size="sm" variant="default">
                 <Link href="/new-visitors">New Here?</Link>
               </Button>
             </li>
