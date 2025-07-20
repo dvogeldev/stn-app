@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 import { GET_SITE_INFO, GET_POSTS } from "@/lib/graphql/queries";
 import Link from "next/link";
 
+interface Post {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+}
+
 export default function Home() {
   const {
     loading: siteInfoLoading,
@@ -54,7 +62,7 @@ export default function Home() {
         <h2 className="text-3xl font-semibold mb-4">Latest Posts</h2>
         {posts.length > 0 ? (
           <div className="grid gap-6">
-            {posts.map((post: any) => (
+            {posts.map((post: Post) => (
               <div key={post.id} className="border p-4 rounded-lg shadow-md">
                 <Link href={`/posts/${post.slug}`} passHref>
                   <h3 className="text-2xl font-bold mb-2 text-blue-600 hover:underline cursor-pointer">

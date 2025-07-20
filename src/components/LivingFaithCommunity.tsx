@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export const LivingFaithCommunity = () => { // Changed to named export
   return (
@@ -6,12 +7,13 @@ export const LivingFaithCommunity = () => { // Changed to named export
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image Section */}
         <div className="flex justify-center md:justify-end">
-          <img
-            src="https://placehold.co/600x400/E0E0E0/333333?text=Church+Community" // Placeholder image URL
+          <Image
             src="/parish_family_cropped.webp"
             alt="Church Community"
-            className="rounded-xl shadow-lg max-w-full h-auto border border-border"
-            onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}
+            width={600}
+            height={400}
+            className="rounded-xl shadow-lg border border-border"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
@@ -21,9 +23,9 @@ export const LivingFaithCommunity = () => { // Changed to named export
             Living Faith Community
           </h2>
           <p className="mt-4 text-lg text-muted-foreground mb-8 rounded-lg">
-            Our parish is more than a place of worship—it's a family
+            Our parish is more than a place of worship—it&apos;s a family
             where lasting friendships are formed, children grow in
-            faith, and everyone finds their place in God's love.
+            faith, and everyone finds their place in God&apos;s love.
           </p>
 
           {/* Statistical Cards Container */}

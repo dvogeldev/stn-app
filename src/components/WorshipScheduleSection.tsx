@@ -39,7 +39,7 @@ export const WorshipScheduleSection = () => {
               <h3 className="text-xl font-semibold text-card-foreground mb-1 rounded-lg">Vespers</h3>
               <p className="text-secondary font-medium mb-2 rounded-lg">Saturdays at 6:00 PM</p>
               <p className="text-muted-foreground rounded-lg">
-                Evening prayer service preparing for the Lord's Day.
+                Evening prayer service preparing for the Lord&apos;s Day.
               </p>
             </div>
           </div>

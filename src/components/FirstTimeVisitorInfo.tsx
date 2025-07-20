@@ -9,15 +9,15 @@ export const FirstTimeVisitorInfo = () => {
         <h3 className="text-3xl font-bold text-card-foreground rounded-lg">First Time Visitors</h3>
       </div>
       <p className="mt-4 text-lg text-muted-foreground mb-6 rounded-lg">
-        If you're new to Orthodox worship, we understand it can feel
-        unfamiliar. Please don't worry about "doing everything right" -
+        If you&apos;re new to Orthodox worship, we understand it can feel
+        unfamiliar. Please don&apos;t worry about &quot;doing everything right&quot; -
         simply come and experience the beauty of our ancient liturgy.
       </p>
       <ul className="list-disc list-inside text-muted-foreground text-lg space-y-3 mb-8">
         <li>Arrive a few minutes early to get settled</li>
         <li>Feel free to ask questions after the service</li>
         <li>Stay for coffee hour to meet the community</li>
-        <li>Dress modestly but don't worry about formal attire</li>
+        <li>Dress modestly but don&apos;t worry about formal attire</li>
       </ul>
       <div className="mt-auto"> {/* Pushes the button to the bottom */}
         <a

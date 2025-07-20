@@ -1,6 +1,7 @@
 // src/components/HeroSection.tsx
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Clock, MapPin } from 'lucide-react'; // Import icons from lucide-react
 
 export function HeroSection() {
@@ -8,10 +9,13 @@ export function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/still_image.jpg"
           alt="Interior of St. Nicholas Orthodox Church showing the beautiful iconostasis with traditional Orthodox icons, ornate wooden carvings, and a priest conducting Divine Liturgy at the altar"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         {/* Dark overlay for text contrast */}
         <div className="absolute inset-0 bg-black/50"></div>

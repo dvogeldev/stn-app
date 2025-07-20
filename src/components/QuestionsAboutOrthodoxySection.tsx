@@ -8,8 +8,8 @@ export const QuestionsAboutOrthodoxySection = () => {
           Questions About Orthodoxy?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto mb-12 rounded-lg">
-          Whether you're curious about Orthodox Christianity, considering conversion, or looking
-          for a spiritual home, we're here to help. Our priests and community members are always
+          Whether you&apos;re curious about Orthodox Christianity, considering conversion, or looking
+          for a spiritual home, we&apos;re here to help. Our priests and community members are always
           available to discuss faith, answer questions, and provide guidance.
         </p>
 

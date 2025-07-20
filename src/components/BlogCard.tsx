@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { User, CalendarDays, Clock } from 'lucide-react'; // Importing icons
 
 interface BlogCardProps {
@@ -35,11 +36,12 @@ export const BlogCard: React.FC<BlogCardProps> = ({
         {/* Image Section */}
         <div className={`${isPrimary ? 'w-full md:w-1/2' : 'w-full'} flex-shrink-0`}>
           <div className="relative pb-[66.66%] md:pb-[56.25%] overflow-hidden rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
-            <img
+            <Image
               src={imageUrl}
               alt={title}
-              className="absolute inset-0 w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
-              onError={(e) => { e.currentTarget.src = "https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}
+              fill
+              className="object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
               {category}

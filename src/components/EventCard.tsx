@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, MapPin, Users, CalendarDays, BellRing, PlusCircle } from 'lucide-react'; // Importing Lucide icons
+import { Clock, MapPin, Users, CalendarDays, BellRing } from 'lucide-react'; // Importing Lucide icons
 
 interface EventCardProps {
   title: string;

@@ -64,7 +64,7 @@ export const AboutParish = () => { // Changed to named export
             <h3 className="text-xl font-semibold text-card-foreground mb-4 rounded-lg">Community</h3>
             <p className="text-muted-foreground text-center rounded-lg">
               Our parish family welcomes all who seek to
-              grow in faith, whether you're new to Orthodoxy
+              grow in faith, whether you&apos;re new to Orthodoxy
               or a lifelong member.
             </p>
           </div>

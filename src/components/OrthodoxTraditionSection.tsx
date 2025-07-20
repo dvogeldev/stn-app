@@ -1,4 +1,5 @@
  import React from 'react';
+import Image from 'next/image';
 
 // This component displays information about the Orthodox Tradition
 // with a descriptive text section, an accompanying image, and three historical cards.
@@ -39,11 +40,13 @@ export const OrthodoxTraditionSection = () => {
         {/* Image Section - Right column on larger screens */}
         <div className="flex justify-center md:justify-end order-1 md:order-2">
           <div className="bg-card border border-border rounded-xl shadow-lg p-4 max-w-sm w-full">
-            <img
+            <Image
               src="/christ_icon.webp" // Path to your uploaded image in the public directory
               alt="Christ with the Church Fathers - Byzantine tradition"
-              className="rounded-lg max-w-full h-auto object-cover mb-4"
-              onError={(e) => { e.currentTarget.src = "https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}
+              width={400}
+              height={300}
+              className="rounded-lg object-cover mb-4"
+              sizes="(max-width: 640px) 100vw, 400px"
             />
             <p className="text-sm text-muted-foreground text-center">
               <span className="font-semibold text-card-foreground">Christ with the Church Fathers</span>
