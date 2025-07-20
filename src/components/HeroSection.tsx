@@ -1,10 +1,11 @@
 // src/components/HeroSection.tsx
-'use client';
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, Clock, MapPin } from 'lucide-react'; // Import icons from lucide-react
+import { fetchSiteSettings } from '@/lib/wordpress';
 
-export function HeroSection() {
+export async function HeroSection() {
+  const siteSettings = await fetchSiteSettings();
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -96,8 +97,7 @@ export function HeroSection() {
               className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-10 max-w-4xl mx-auto leading-relaxed drop-shadow-md"
               style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.4)' }}
             >
-              Experience the beauty of ancient Orthodox worship in the heart of Grand Rapids.
-              All are welcome to join our community.
+              {siteSettings.homepageSettings.welcomeMessage || 'Experience the beauty of ancient Orthodox worship in the heart of Grand Rapids. All are welcome to join our community.'}
             </p>
           </div>
 

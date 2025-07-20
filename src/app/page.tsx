@@ -1,5 +1,4 @@
 // src/app/page.tsx
-'use client'; // HeroSection uses client components (e.g., Shadcn buttons)
 
 import { HeroSection } from '@/components/HeroSection';
 import { AboutParish } from '@/components/AboutParish';

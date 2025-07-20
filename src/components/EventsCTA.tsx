@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { CalendarDays, BellRing } from 'lucide-react'; // Importing icons
 

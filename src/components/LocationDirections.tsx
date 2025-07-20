@@ -1,8 +1,26 @@
+'use client';
 import React from 'react';
-import Image from 'next/image';
-import { Send, Car, ParkingCircle, Landmark } from 'lucide-react'; // Importing Lucide icons
 
-export const LocationDirections = () => {
+import { Send, Car, ParkingCircle, Landmark } from 'lucide-react'; // Importing Lucide icons
+import { SiteSettings } from '@/lib/wordpress';
+
+interface LocationDirectionsProps {
+  siteSettings: SiteSettings;
+}
+
+export const LocationDirections = ({ siteSettings }: LocationDirectionsProps) => {
+  // Generate Google Maps embed URL from address if no embed URL is provided
+  const getGoogleMapsEmbedUrl = () => {
+    if (siteSettings.location.googleMapsEmbedUrl) {
+      return siteSettings.location.googleMapsEmbedUrl;
+    }
+    
+    // Fallback: create basic embed URL from address (no API key required)
+    const address = `${siteSettings.location.address}, ${siteSettings.location.city}, ${siteSettings.location.state} ${siteSettings.location.zipCode}`;
+    const encodedAddress = encodeURIComponent(address);
+    return `https://maps.google.com/maps?q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  };
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background font-sans">
       <div className="max-w-7xl mx-auto">
@@ -21,23 +39,25 @@ export const LocationDirections = () => {
           </button>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="bg-muted border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground text-xl mb-8 overflow-hidden">
-          {/* You would integrate a real map component (e.g., Google Maps, Leaflet) here */}
-          <Image
-            src="/images/st-nick-gmap.png" // Placeholder image for the map area
-            alt="Map of Church Location"
-            width={1200}
-            height={450}
-            className="w-full h-auto"
-            priority
+        {/* Live Google Maps Embed */}
+        <div className="bg-muted border border-border rounded-xl shadow-lg overflow-hidden mb-8">
+          <iframe
+            src={getGoogleMapsEmbedUrl()}
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="St. Nicholas Orthodox Church Location"
+            className="w-full h-[450px] rounded-xl"
           />
         </div>
 
         {/* Get Turn-by-Turn Directions Button */}
         <div className="text-center mb-12">
           <a
-            href="https://maps.app.goo.gl/your-church-location" // Replace with actual Google Maps directions link
+            href={siteSettings.location.googleMapsUrl || "https://www.google.com/maps/dir//2250+E+Paris+Ave+SE,+Grand+Rapids,+MI+49546"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 md:py-4 md:px-10 text-lg transition-colors duration-300 shadow-md"

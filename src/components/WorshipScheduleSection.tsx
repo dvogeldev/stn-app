@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 // Importing icons from Lucide React. You might need to install it: npm install lucide-react
 import { HeartHandshake, CalendarDays, BookOpen, Coffee, BellRing } from 'lucide-react';

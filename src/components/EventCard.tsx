@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Clock, MapPin, Users, CalendarDays, BellRing } from 'lucide-react'; // Importing Lucide icons
 
