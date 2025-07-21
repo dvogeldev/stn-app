@@ -1,15 +1,8 @@
 import { Calendar as CalendarIcon } from 'lucide-react';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import CalendarClient from './CalendarClient';
-
-interface CalendarEvent {
-  id: string;
-  title: string;
-  start: Date;
-  end: Date;
-  description?: string;
-  location?: string;
-}
+import { type CalendarEvent } from '@/lib/eventCategorization';
 
 // Server-side data fetching with ISR
 async function getCalendarEvents(): Promise<CalendarEvent[]> {
@@ -56,12 +49,13 @@ function parseICS(icsData: string): CalendarEvent[] {
     } else if (line === 'END:VEVENT' && inEvent) {
       if (currentEvent.title && currentEvent.start) {
         events.push({
-          id: currentEvent.id || Math.random().toString(36).substr(2, 9),
+          id: currentEvent.id || Math.random().toString(36).substring(2, 11),
           title: currentEvent.title,
           start: currentEvent.start,
           end: currentEvent.end || currentEvent.start,
           description: currentEvent.description,
           location: currentEvent.location,
+          categories: [], // Will be populated by categorizeEvents in CalendarClient
         });
       }
       inEvent = false;
@@ -116,6 +110,7 @@ export default async function CalendarPage() {
 
   return (
     <div className="bg-stone-50">
+      <Header />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-teal-600 to-teal-800 text-white py-16">
         <div className="container mx-auto px-4">

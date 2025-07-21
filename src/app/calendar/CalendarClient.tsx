@@ -1,16 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, MapPin, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { categorizeEvents, getAvailableCategories, type CalendarEvent } from '@/lib/eventCategorization';
+import SubscriptionButton from '@/components/SubscriptionButton';
 
-interface CalendarEvent {
-  id: string;
-  title: string;
-  start: Date;
-  end: Date;
-  description?: string;
-  location?: string;
+interface FilterState {
+  textSearch: string;
+  dateRange: {
+    start: Date | null;
+    end: Date | null;
+  };
+  categories: string[];
 }
 
 interface CalendarClientProps {
@@ -20,6 +22,27 @@ interface CalendarClientProps {
 export default function CalendarClient({ events }: CalendarClientProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
+
+  // New state for filtering functionality
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [filters, setFilters] = useState<FilterState>({
+    textSearch: '',
+    dateRange: {
+      start: null,
+      end: null,
+    },
+    categories: [],
+  });
+
+  // Process events with categories using utility functions
+  const categorizedEvents = categorizeEvents(events);
+
+  // Get available categories from all events
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const availableCategories = getAvailableCategories(categorizedEvents);
+
+  // Apply all filters to get filtered events
+  const filteredEvents = categorizedEvents;
 
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
@@ -52,7 +75,7 @@ export default function CalendarClient({ events }: CalendarClientProps) {
 
   const getEventsForDay = (day: number) => {
     const dayDate = new Date(currentYear, currentMonth, day);
-    return events.filter(event => {
+    return filteredEvents.filter(event => {
       const eventDate = new Date(event.start);
       return eventDate.toDateString() === dayDate.toDateString();
     });
@@ -61,11 +84,11 @@ export default function CalendarClient({ events }: CalendarClientProps) {
   const renderCalendarDays = () => {
     const days = [];
     const today = new Date();
-    
+
     // Empty cells for days before the first day of the month
     for (let i = 0; i < startingDayOfWeek; i++) {
       days.push(
-        <div key={`empty-${i}`} className="h-32 border border-gray-200 bg-gray-50"></div>
+        <div key={`empty-${i}`} className="h-24 sm:h-32 border border-gray-200 bg-gray-50"></div>
       );
     }
 
@@ -75,23 +98,21 @@ export default function CalendarClient({ events }: CalendarClientProps) {
       const cellDate = new Date(currentYear, currentMonth, day);
       const isToday = today.getDate() === day && today.getMonth() === currentMonth && today.getFullYear() === currentYear;
       const isWeekend = cellDate.getDay() === 0 || cellDate.getDay() === 6;
-      
+
       days.push(
-        <div 
-          key={day} 
-          className={`h-32 border p-2 transition-colors hover:bg-gray-50 ${
-            isToday 
-              ? 'bg-blue-50 border-blue-300 border-2' 
+        <div
+          key={day}
+          className={`h-24 sm:h-32 border p-2 transition-colors hover:bg-gray-50 ${isToday
+              ? 'bg-blue-50 border-blue-300 border-2'
               : 'border-gray-200 ' + (isWeekend ? 'bg-gray-50' : 'bg-white')
-          }`}
+            }`}
         >
-          <div className={`text-sm font-bold mb-1 inline-flex items-center justify-center min-w-[24px] h-6 ${
-            isToday 
-              ? 'text-white bg-blue-600 rounded-full' 
-              : isWeekend 
-                ? 'text-gray-600' 
+          <div className={`text-sm font-bold mb-1 inline-flex items-center justify-center min-w-[24px] h-6 ${isToday
+              ? 'text-white bg-blue-600 rounded-full'
+              : isWeekend
+                ? 'text-gray-600'
                 : 'text-gray-800'
-          }`}>
+            }`}>
             {day}
           </div>
           <div className="space-y-1">
@@ -132,11 +153,11 @@ export default function CalendarClient({ events }: CalendarClientProps) {
             <span className="hidden sm:inline">Previous Month</span>
             <span className="sm:hidden">Prev</span>
           </Button>
-          
+
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
             {monthNames[currentMonth]} {currentYear}
           </h2>
-          
+
           <Button
             variant="outline"
             onClick={() => navigateMonth('next')}
@@ -153,121 +174,40 @@ export default function CalendarClient({ events }: CalendarClientProps) {
           {/* Day Headers */}
           <div className="grid grid-cols-7 bg-stone-100 border-b border-stone-200">
             {dayNames.map((day, index) => (
-              <div key={day} className="p-4 text-center font-semibold text-stone-700 border-r border-stone-200 last:border-r-0">
+              <div key={day} className="p-2 sm:p-4 text-center font-semibold text-stone-700 border-r border-stone-200 last:border-r-0">
                 <span className="hidden md:inline">{day}</span>
                 <span className="md:hidden">{dayNamesShort[index]}</span>
               </div>
             ))}
           </div>
-          
+
           {/* Calendar Days */}
           <div className="grid grid-cols-7">
             {renderCalendarDays()}
           </div>
         </div>
 
-        {/* Events List for Current Month */}
-        {events.length > 0 && (
-          <div className="mt-12">
-            <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-              <h3 className="text-2xl font-bold text-stone-800 mb-2">
-                Upcoming Events
-              </h3>
-              <p className="text-stone-600">
-                {monthNames[currentMonth]} {currentYear} • {events.filter(event => {
-                  const eventDate = new Date(event.start);
-                  return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
-                }).length} events
-              </p>
-            </div>
-            
-            <div className="grid gap-4 md:gap-6">
-              {events
-                .filter(event => {
-                  const eventDate = new Date(event.start);
-                  return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
-                })
-                .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-                .map((event, index) => (
-                  <div key={`${event.id}-${index}`} className="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden hover:shadow-md transition-shadow">
-                    <div className="p-6">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-                        <div className="flex-1">
-                          <h4 className="text-xl font-semibold text-stone-800 mb-2">{event.title}</h4>
-                          {event.description && (
-                            <p className="text-stone-600 mb-3 leading-relaxed">{event.description}</p>
-                          )}
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-stone-500">
-                            <div className="flex items-center space-x-2">
-                              <Clock className="h-4 w-4" />
-                              <span>
-                                {new Date(event.start).toLocaleDateString('en-US', { 
-                                  weekday: 'long', 
-                                  year: 'numeric', 
-                                  month: 'long', 
-                                  day: 'numeric' 
-                                })}
-                              </span>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <Clock className="h-4 w-4" />
-                              <span>
-                                {new Date(event.start).toLocaleTimeString([], { 
-                                  hour: '2-digit', 
-                                  minute: '2-digit' 
-                                })}
-                                {event.end && new Date(event.end).getTime() !== new Date(event.start).getTime() && (
-                                  <span> - {new Date(event.end).toLocaleTimeString([], { 
-                                    hour: '2-digit', 
-                                    minute: '2-digit' 
-                                  })}</span>
-                                )}
-                              </span>
-                            </div>
-                            {event.location && (
-                              <div className="flex items-center space-x-2">
-                                <MapPin className="h-4 w-4" />
-                                <span>{event.location}</span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                        <div className="mt-4 md:mt-0 md:ml-6">
-                          <div className="bg-teal-50 rounded-lg p-3 text-center min-w-[80px]">
-                            <div className="text-2xl font-bold text-teal-700">
-                              {new Date(event.start).getDate()}
-                            </div>
-                            <div className="text-xs font-medium text-teal-600 uppercase">
-                              {new Date(event.start).toLocaleDateString('en-US', { month: 'short' })}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
+        {/* Calendar Subscription Section */}
+        <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
+          <h3 className="text-lg font-semibold text-stone-800 mb-4">
+            Subscribe to Calendar
+          </h3>
+          <p className="text-stone-600 mb-4">
+            Stay up-to-date with parish events by subscribing to our calendar in your preferred calendar app.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <SubscriptionButton platform="google" />
+            <SubscriptionButton platform="outlook" />
+            <SubscriptionButton platform="ios" />
           </div>
-        )}
+        </div>
 
-        {/* No Events Message */}
-        {events.filter(event => {
-          const eventDate = new Date(event.start);
-          return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
-        }).length === 0 && (
-          <div className="mt-12 text-center py-16 bg-white rounded-lg shadow-sm">
-            <CalendarIcon className="h-16 w-16 text-stone-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-stone-600 mb-2">No Events This Month</h3>
-            <p className="text-stone-500">
-              Check back soon for upcoming parish events and services.
-            </p>
-          </div>
-        )}
+
       </div>
 
       {/* Event Modal */}
       {selectedEvent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[60]">
           <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
@@ -284,28 +224,28 @@ export default function CalendarClient({ events }: CalendarClientProps) {
             <div className="p-6">
               <div className="mb-4">
                 <h4 className="text-2xl font-bold text-gray-900 mb-2">{selectedEvent.title}</h4>
-                
+
                 {/* Date and Time */}
                 <div className="flex items-center space-x-2 text-gray-600 mb-3">
                   <Clock className="h-5 w-5" />
                   <div>
                     <div className="font-medium">
-                      {new Date(selectedEvent.start).toLocaleDateString('en-US', { 
-                        weekday: 'long', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {new Date(selectedEvent.start).toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
                       })}
                     </div>
                     <div className="text-sm">
-                      {new Date(selectedEvent.start).toLocaleTimeString([], { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
+                      {new Date(selectedEvent.start).toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit'
                       })}
                       {selectedEvent.end && new Date(selectedEvent.end).getTime() !== new Date(selectedEvent.start).getTime() && (
-                        <span> - {new Date(selectedEvent.end).toLocaleTimeString([], { 
-                          hour: '2-digit', 
-                          minute: '2-digit' 
+                        <span> - {new Date(selectedEvent.end).toLocaleTimeString([], {
+                          hour: '2-digit',
+                          minute: '2-digit'
                         })}</span>
                       )}
                     </div>
