@@ -31,6 +31,7 @@ export function AdminCommentControls({ className }: AdminCommentControlsProps) {
       setMessage(result.message);
       setIsSuccess(result.success);
     } catch (error) {
+      console.error('Failed to disable comments:', error);
       setMessage('Failed to disable comments. Please try again.');
       setIsSuccess(false);
     } finally {

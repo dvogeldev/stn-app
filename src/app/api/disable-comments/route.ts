@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { disableCommentsOnPosts } from '@/lib/wordpress';
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const success = await disableCommentsOnPosts();
     

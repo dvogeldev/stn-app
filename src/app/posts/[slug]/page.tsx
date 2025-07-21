@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_SINGLE_POST } from "@/lib/graphql/queries";
 import { getCommentStatusMessage } from "@/lib/comments";
@@ -7,9 +8,9 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 
 interface SinglePostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 interface Post {
@@ -26,8 +27,9 @@ interface Post {
 }
 
 export default function SinglePost({ params }: SinglePostProps) {
+  const resolvedParams = use(params);
   const { loading, error, data } = useQuery(GET_SINGLE_POST, {
-    variables: { id: params.slug, idType: "SLUG" },
+    variables: { id: resolvedParams.slug, idType: "SLUG" },
   });
 
   if (loading) return (
