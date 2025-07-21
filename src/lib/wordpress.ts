@@ -45,14 +45,7 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
           phone
           email
           website
-          googleMapsUrl
-          googleMapsEmbedUrl
           officeHours
-        }
-        homepageSettings {
-          welcomeMessage
-          siteTitle
-          siteTagline
         }
       }
     }
@@ -75,7 +68,27 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
 
     // Check if the response has the expected structure
     if (result?.data?.siteSettings) {
-      return result.data.siteSettings;
+      const siteSettings = result.data.siteSettings;
+      
+      // Transform the response to match our interface
+      return {
+        location: {
+          ...siteSettings.location,
+          // Generate Google Maps URLs from address data since WordPress field is problematic
+          googleMapsUrl: siteSettings.location?.address 
+            ? `https://www.google.com/maps/dir//${encodeURIComponent(
+                `${siteSettings.location.address}, ${siteSettings.location.city}, ${siteSettings.location.state} ${siteSettings.location.zipCode}`
+              )}`
+            : getFallbackSiteSettings().location.googleMapsUrl,
+          googleMapsEmbedUrl: siteSettings.location?.address 
+            ? `https://maps.google.com/maps?q=${encodeURIComponent(
+                `${siteSettings.location.address}, ${siteSettings.location.city}, ${siteSettings.location.state} ${siteSettings.location.zipCode}`
+              )}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+            : getFallbackSiteSettings().location.googleMapsEmbedUrl
+        },
+        // Use fallback for homepageSettings since it's not available in WordPress
+        homepageSettings: getFallbackSiteSettings().homepageSettings
+      };
     } else {
       console.warn('Unexpected GraphQL response structure:', result);
       return getFallbackSiteSettings();
