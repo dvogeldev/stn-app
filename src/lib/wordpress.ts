@@ -108,3 +108,49 @@ function getFallbackSiteSettings(): SiteSettings {
     }
   };
 }
+
+/**
+ * Utility function to disable comments on WordPress posts
+ * This can be used to bulk disable comments on existing posts
+ */
+export async function disableCommentsOnPosts(): Promise<boolean> {
+  if (!WORDPRESS_API_URL) {
+    console.warn('WORDPRESS_API_URL not configured, cannot disable comments');
+    return false;
+  }
+
+  const mutation = `
+    mutation DisableComments {
+      updateSettings(input: {
+        discussionSettingsDefaultCommentStatus: "closed"
+        discussionSettingsDefaultPingStatus: "closed"
+      }) {
+        discussionSettings {
+          defaultCommentStatus
+          defaultPingStatus
+        }
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch(WORDPRESS_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query: mutation }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log('Comments disabled successfully:', result);
+    return true;
+  } catch (error) {
+    console.error('Error disabling comments:', error);
+    return false;
+  }
+}

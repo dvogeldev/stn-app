@@ -19,6 +19,7 @@ export const GET_POSTS = gql`
         slug
         excerpt
         date
+        commentStatus
         # You can add more fields here if needed, e.g., featuredImage { node { sourceUrl } }
       }
     }
@@ -32,6 +33,7 @@ export const GET_SINGLE_POST = gql`
       title
       content
       date
+      commentStatus
       author {
         node {
           name
