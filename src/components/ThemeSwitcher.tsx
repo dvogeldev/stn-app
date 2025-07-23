@@ -13,12 +13,14 @@ export function ThemeSwitcher() {
     const initialTheme = savedTheme || 'light'
     setTheme(initialTheme)
     document.documentElement.setAttribute('data-theme', initialTheme)
+    document.documentElement.classList.toggle('dark', initialTheme === 'dark')
   }, [])
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
     document.documentElement.setAttribute('data-theme', newTheme)
+    document.documentElement.classList.toggle('dark', newTheme === 'dark')
     localStorage.setItem('theme', newTheme)
   }
 
