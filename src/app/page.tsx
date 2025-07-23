@@ -5,9 +5,7 @@ import { AboutParish } from '@/components/AboutParish';
 import { LivingFaithCommunity } from '@/components/LivingFaithCommunity';
 import { OrthodoxTraditionSection } from '@/components/OrthodoxTraditionSection';
 import { WorshipScheduleSection } from '@/components/WorshipScheduleSection';
-import { AnnouncementsSection } from '@/components/AnnouncementsSection';
-import { EventsSection } from '@/components/EventsSection';
-import { VisitUsSection } from '@/components/VisitUsSection';
+
 import { FirstTimeVisitorSection } from '@/components/FirstTimeVisitorSection';
 import { QuestionsAboutOrthodoxySection } from '@/components/QuestionsAboutOrthodoxySection';
 import { Footer } from '@/components/Footer';
@@ -20,9 +18,6 @@ export default function HomePage() {
       <LivingFaithCommunity />
       <OrthodoxTraditionSection />
       <WorshipScheduleSection />
-      <AnnouncementsSection />
-      <EventsSection />
-      <VisitUsSection />
       <FirstTimeVisitorSection />
       <QuestionsAboutOrthodoxySection />
       <Footer />

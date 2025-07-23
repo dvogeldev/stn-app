@@ -11,7 +11,7 @@ export function Header() {
   const navLinks = [
     { href: '/faith', label: 'Our Faith' },
     { href: '/community', label: 'Our Community' },
-    { href: '/church', label: 'Our Church' },
+    { href: '/our-church', label: 'Our Church' },
     { href: '/calendar', label: 'Calendar' },
   ];
   return (
