@@ -151,7 +151,7 @@ export const AnnouncementsSection = () => {
         {/* Other Latest Posts Grid */}
         {otherPosts.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherPosts.map((post: any, index: number) => (
+            {otherPosts.map((post: Record<string, unknown>, index: number) => (
               <BlogCard key={post.slug || index} {...post} variant="secondary" />
             ))}
           </div>
