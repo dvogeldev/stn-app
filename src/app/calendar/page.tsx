@@ -1,5 +1,4 @@
 import { Calendar as CalendarIcon } from 'lucide-react';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import CalendarClient from './CalendarClient';
 import { type CalendarEvent } from '@/lib/eventCategorization';
@@ -110,7 +109,6 @@ export default async function CalendarPage() {
 
   return (
     <div className="bg-stone-50">
-      <Header />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-teal-600 to-teal-800 text-white py-16">
         <div className="container mx-auto px-4">
