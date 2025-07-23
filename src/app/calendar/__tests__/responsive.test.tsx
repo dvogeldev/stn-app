@@ -3,40 +3,42 @@
  * Tests Requirements: 3.3, 3.1
  */
 
+import React from 'react';
+import { describe, test, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 import CalendarClient from '../CalendarClient';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 // Mock Next.js components
-jest.mock('next/link', () => {
+vi.mock('next/link', () => {
   const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
     <a href={href}>{children}</a>
   );
   MockLink.displayName = 'MockLink';
-  return MockLink;
+  return { default: MockLink };
 });
 
-jest.mock('next/image', () => {
-  const MockImage = ({ 
-    src, 
-    alt, 
-    width, 
-    height, 
-    className 
-  }: { 
-    src: string; 
-    alt: string; 
-    width: number; 
-    height: number; 
+vi.mock('next/image', () => {
+  const MockImage = ({
+    src,
+    alt,
+    width,
+    height,
+    className
+  }: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
     className?: string;
   }) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img src={src} alt={alt} width={width} height={height} className={className} />
   );
   MockImage.displayName = 'MockImage';
-  return MockImage;
+  return { default: MockImage };
 });
 
 // Mock sample calendar events
