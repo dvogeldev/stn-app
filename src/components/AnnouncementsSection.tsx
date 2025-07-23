@@ -57,16 +57,6 @@ export const AnnouncementsSection = () => {
   // Fallback data when WordPress is unavailable
   const fallbackPosts = [
     {
-      title: 'Understanding the Divine Liturgy',
-      description: 'Discover the profound meaning behind each element of our ancient worship service and how it connects us to centuries of Christian tradition.',
-      author: 'Fr. Michael Thompson',
-      date: 'December 15, 2024',
-      readTime: '5 min read',
-      category: 'Worship',
-      imageUrl: '/images/parish-family.jpg',
-      slug: 'understanding-divine-liturgy'
-    },
-    {
       title: 'Preparing for Great Lent',
       description: 'Learn about the spiritual disciplines and practices that help Orthodox Christians prepare their hearts for the holiest season of the year.',
       author: 'Deacon Sarah Williams',
