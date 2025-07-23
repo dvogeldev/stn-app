@@ -33,6 +33,8 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     return getFallbackSiteSettings();
   }
 
+
+
   const query = `
     query GetSiteSettings {
       siteSettings {
@@ -61,7 +63,8 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.warn(`WordPress API returned ${response.status}: ${response.statusText}`);
+      return getFallbackSiteSettings();
     }
 
     const result = await response.json();
