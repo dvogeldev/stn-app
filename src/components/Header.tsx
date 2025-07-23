@@ -14,10 +14,9 @@ export function Header() {
     { href: '/calendar', label: 'Calendar' },
   ];
   return (
-    <div>
-      <TopBar />
-      <header className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+  <header className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50">
+    <TopBar />
+    <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo or Site Title */}
           <Link href="/" className="flex items-center space-x-2 text-xl text-serif font-semibold text-primary-800 dark:text-primary-200">
             {/* Wrap the Image and the div in a single parent element */}
@@ -90,6 +89,5 @@ export function Header() {
           </div>
         </nav>
       </header>
-    </div>
   );
 }
