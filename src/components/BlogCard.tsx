@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { User, CalendarDays, Clock } from 'lucide-react'; // Importing icons
 
-interface BlogCardProps {
+export interface BlogCardProps {
   title: string;
   description: string;
   author: string;
@@ -10,6 +10,7 @@ interface BlogCardProps {
   readTime: string;
   category: string;
   imageUrl: string;
+  slug: string;
   variant?: 'primary' | 'secondary'; // 'primary' for featured, 'secondary' for others
 }
 

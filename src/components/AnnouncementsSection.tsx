@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { BlogCard } from './BlogCard';
+import { BlogCard, type BlogCardProps } from './BlogCard';
 import { GET_POSTS, WordPressPost } from '@/lib/graphql/queries';
 
 // Utility function to calculate estimated read time
@@ -141,7 +141,7 @@ export const AnnouncementsSection = () => {
         {/* Other Latest Posts Grid */}
         {otherPosts.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherPosts.map((post: Record<string, unknown>, index: number) => (
+            {otherPosts.map((post: BlogCardProps, index: number) => (
               <BlogCard key={post.slug || index} {...post} variant="secondary" />
             ))}
           </div>
