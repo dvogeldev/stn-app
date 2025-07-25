@@ -57,7 +57,7 @@ export const Footer = () => {
               &copy; 2025 St. Nicholas Orthodox Church. All rights reserved.
             </p>
           </div>
-          
+
           {/* Development Theme Switcher */}
           <div className="flex items-center gap-2">
             <span className="text-xs text-gray-600">Theme:</span>
