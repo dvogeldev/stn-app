@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { categorizeEvents, getAvailableCategories, type CalendarEvent } from '@/lib/eventCategorization';
