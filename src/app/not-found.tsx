@@ -51,7 +51,7 @@ export default function NotFound() {
             Lost on the Path to St. Nicholas?
           </h1>
           <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.4)' }}>
-            Fear not, weary traveler! You've wandered off the trail, but St. Nicholas is here to guide you back.
+            Fear not, weary traveler! You&apos;ve wandered off the trail, but St. Nicholas is here to guide you back.
           </p>
 
           <div className="mx-auto mb-8">
@@ -84,7 +84,7 @@ export default function NotFound() {
           </div>
 
           <p className="mb-6 max-w-xl mx-auto text-white text-xl md:text-2xl leading-relaxed" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.4)' }}>
-            It seems this page has slipped away like a candle's flicker in the wind. While we search for it, explore these paths to reconnect with our community.
+            It seems this page has slipped away like a candle&apos;s flicker in the wind. While we search for it, explore these paths to reconnect with our community.
           </p>
 
           <nav className="flex justify-center gap-4 mb-12 flex-wrap" role="navigation" aria-label="Error page navigation">
