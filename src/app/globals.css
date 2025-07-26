@@ -177,6 +177,21 @@ body:has(.hide-header) header {
   pointer-events: none;
 }
 
+/* Ensure 404 page covers entire viewport without white bars */
+body:has(.hide-header) {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+html:has(.hide-header) {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
 /* Logo variants for different backgrounds */
 .logo-icon {
   fill: var(--logo-light);
