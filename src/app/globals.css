@@ -48,6 +48,10 @@
 :root {
   --radius: 0.625rem;
   --gold: hsl(40, 70%, 50%);
+  
+  /* Logo color variants */
+  --logo-light: hsl(230, 30%, 70%); /* #b6bfed for dark backgrounds */
+  --logo-dark: hsl(230, 30%, 35%);  /* #454e75 for light backgrounds */
   /* #CDA434 - Divine light */
   --teal: hsl(165, 50%, 35%);
   /* #2E7D6B - Spiritual serenity */
@@ -157,6 +161,43 @@
   /* Optional: adds some padding on smaller screens */
   padding-right: 1rem;
   /* Optional: adds some padding on smaller screens */
+}
+
+/* Hide header on 404 page - direct approach */
+.hide-header {
+  margin-top: -80px; /* Adjust based on header height */
+}
+
+body:has(.hide-header) header {
+  position: absolute;
+  top: -200px;
+  left: -9999px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Logo variants for different backgrounds */
+.logo-icon {
+  fill: var(--logo-light);
+  stroke: var(--logo-light);
+}
+
+/* On light backgrounds, use dark logo */
+.bg-background .logo-icon,
+.bg-card .logo-icon,
+[data-theme="light"] .logo-icon {
+  fill: var(--logo-dark);
+  stroke: var(--logo-dark);
+}
+
+/* On dark backgrounds, use light logo */
+.bg-black .logo-icon,
+.bg-gray-900 .logo-icon,
+[data-theme="dark"] .logo-icon,
+.dark-background .logo-icon {
+  fill: var(--logo-light);
+  stroke: var(--logo-light);
 }
 
 @layer base {
