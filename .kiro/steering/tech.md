@@ -23,6 +23,36 @@
 - **PostCSS** with Tailwind
 - **Turbopack** for faster development builds
 
+## Code Quality Standards
+
+### JSX Character Escaping
+Always properly escape special characters in JSX to prevent ESLint errors and ensure proper rendering:
+
+**Required Escaping:**
+- Apostrophes: `'` → `&apos;`
+- Quotes: `"` → `&quot;`
+- Less than: `<` → `&lt;`
+- Greater than: `>` → `&gt;`
+- Ampersand: `&` → `&amp;`
+
+**Examples:**
+```jsx
+// ❌ Incorrect - will cause ESLint errors
+<p>It's a beautiful day</p>
+<p>The church's mission</p>
+
+// ✅ Correct - properly escaped
+<p>It&apos;s a beautiful day</p>
+<p>The church&apos;s mission</p>
+```
+
+### React/JSX Best Practices
+- Always escape special characters in text content
+- Use semantic HTML elements with proper ARIA labels
+- Ensure all images have descriptive alt text
+- Use TypeScript interfaces for component props
+- Follow consistent naming conventions (PascalCase for components)
+
 ## Common Commands
 
 ### Development
