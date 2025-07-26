@@ -18,11 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <ApolloProvider>
-          {/* CRUCIAL CHANGE: Using a single explicit div to wrap Header and children */}
-          <div>
-            <Header />
-            {children}
-          </div>
+          <Header />
+          {children}
         </ApolloProvider>
       </body>
     </html>
