@@ -1,5 +1,4 @@
 // src/app/layout.tsx
-import { Header } from "@/components/Header";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ApolloProvider } from "@/components/providers/apollo-provider";
@@ -18,7 +17,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <ApolloProvider>
-          <Header />
           {children}
         </ApolloProvider>
       </body>
