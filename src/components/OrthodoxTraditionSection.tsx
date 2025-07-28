@@ -31,9 +31,9 @@ export const OrthodoxTraditionSection = () => {
             The same prayers, the same reverence, the same <span className="italic text-secondary">living tradition</span>
             that sustained martyrs and saints now sustains us in our modern pilgrimage.
           </p>
-          <blockquote className="text-lg text-foreground italic border-l-4 border-primary pl-4 py-2 mt-6 rounded-lg bg-card/50">
+          <blockquote className="text-lg text-foreground italic border-l-4 border-primary pl-4 py-2 mt-6 rounded-lg bg-card/50 font-decorative">
             &ldquo;We have not changed the everlasting boundaries which our fathers have set, but we keep the tradition as we have received it.&rdquo;
-            <footer className="mt-2 text-base text-muted-foreground">— St. John of Damascus</footer>
+            <footer className="mt-2 text-base text-muted-foreground font-decorative">— St. John of Damascus</footer>
           </blockquote>
         </div>
 
