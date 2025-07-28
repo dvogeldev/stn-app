@@ -24,6 +24,7 @@ const gfsDidot = GFS_Didot({
   weight: ["400"],
   variable: "--font-gfs-didot",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -38,6 +39,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=GFS+Didot:wght@400&display=swap"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=GFS+Didot:wght@400&display=swap"
+        />
+      </head>
       <body className={`${poppins.variable} ${merriweather.variable} ${gfsDidot.variable} font-body`}>
         <ApolloProvider>
           {children}
