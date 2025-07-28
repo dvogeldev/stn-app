@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ["var(--font-poppins)", "sans-serif"],
+        heading: ["var(--font-merriweather)", "serif"],
+        decorative: ["var(--font-gfs-didot)", "serif"],
+        sans: ["var(--font-poppins)", "sans-serif"],
+        serif: ["var(--font-merriweather)", "serif"],
+      },
       colors: {
         // Antiochian Orthodox Church Color Palette
         background: "hsl(var(--background))",
