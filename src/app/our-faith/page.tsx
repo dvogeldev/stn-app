@@ -2,45 +2,39 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PageLayout } from '@/components/PageLayout';
-import { MapPin, Users, Building, DollarSign, Network, History } from 'lucide-react';
+import { Book, Cross, Church, FileText, Mic } from 'lucide-react';
 
-export default function OurChurchPage() {
-  const churchPages = [
+export default function OurFaithPage() {
+  const faithPages = [
     {
-      title: 'Visit Us',
-      description: 'Find our location, contact information, and directions to join us for worship.',
-      href: '/our-church/visit-us',
-      icon: MapPin,
+      title: 'Beliefs',
+      description: 'Explore the fundamental beliefs and doctrines of Orthodox Christianity.',
+      href: '/our-faith/beliefs',
+      icon: Cross,
     },
     {
-      title: 'Parish History',
-      description: 'Discover the rich history and heritage of St. Nicholas Orthodox Church.',
-      href: '/our-church/parish-history',
-      icon: History,
+      title: 'Liturgical Life',
+      description: 'Discover the rich liturgical traditions and worship practices of our faith.',
+      href: '/our-faith/liturgical-life',
+      icon: Church,
     },
     {
-      title: 'Clergy & Staff',
-      description: 'Meet our dedicated clergy and staff who serve our parish community.',
-      href: '/our-church/clergy-staff',
-      icon: Users,
+      title: 'Traditions',
+      description: 'Learn about the sacred traditions that have been passed down through generations.',
+      href: '/our-faith/traditions',
+      icon: Book,
     },
     {
-      title: 'Architecture',
-      description: 'Explore the beautiful architecture and sacred spaces of our church.',
-      href: '/our-church/architecture',
-      icon: Building,
+      title: 'Glossary',
+      description: 'Understanding Orthodox terminology and concepts made simple.',
+      href: '/our-faith/glossary',
+      icon: FileText,
     },
     {
-      title: 'Donations',
-      description: 'Learn about ways to support our parish through donations and stewardship.',
-      href: '/our-church/donations',
-      icon: DollarSign,
-    },
-    {
-      title: 'How Our Parish Fits In',
-      description: 'Understand our place within the broader Orthodox Church and community.',
-      href: '/our-church/how-our-parish-fits-in',
-      icon: Network,
+      title: 'Homilies',
+      description: 'Listen to inspiring messages and teachings from our clergy.',
+      href: '/our-faith/homilies',
+      icon: Mic,
     },
   ];
 
@@ -51,16 +45,16 @@ export default function OurChurchPage() {
         {/* Page Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-extrabold text-foreground mb-6">
-            Our Church
+            Our Faith
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Learn more about St. Nicholas Orthodox Church, our community, and how to connect with us.
+            Discover the rich traditions, beliefs, and practices of Orthodox Christianity as lived and celebrated at St. Nicholas Orthodox Church.
           </p>
         </div>
 
-        {/* Church Pages Grid */}
+        {/* Faith Pages Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {churchPages.map((page) => {
+          {faithPages.map((page) => {
             const IconComponent = page.icon;
             return (
               <Link
