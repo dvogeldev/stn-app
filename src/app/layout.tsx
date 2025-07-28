@@ -20,7 +20,7 @@ const merriweather = Merriweather({
 });
 
 const gfsDidot = GFS_Didot({
-  subsets: ["greek"],
+  subsets: ["greek", "latin"],
   weight: ["400"],
   variable: "--font-gfs-didot",
   display: "swap",

@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 // This component displays information about the Orthodox Tradition
@@ -31,9 +31,28 @@ export const OrthodoxTraditionSection = () => {
             The same prayers, the same reverence, the same <span className="italic text-secondary">living tradition</span>
             that sustained martyrs and saints now sustains us in our modern pilgrimage.
           </p>
-          <blockquote className="text-lg text-foreground italic border-l-4 border-primary pl-4 py-2 mt-6 rounded-lg bg-card/50 font-decorative">
+          {/* Test element to verify font loading */}
+          <div style={{ fontFamily: 'var(--font-gfs-didot), serif', fontSize: '24px', color: 'red', marginBottom: '10px' }}>
+            TEST: GFS Didot Font Loading
+          </div>
+          
+          <blockquote 
+            className="text-lg text-foreground italic border-l-4 border-primary pl-4 py-2 mt-6 rounded-lg bg-card/50"
+            style={{ 
+              fontFamily: 'var(--font-gfs-didot), serif !important',
+              fontWeight: '400'
+            }}
+          >
             &ldquo;We have not changed the everlasting boundaries which our fathers have set, but we keep the tradition as we have received it.&rdquo;
-            <footer className="mt-2 text-base text-muted-foreground font-decorative">— St. John of Damascus</footer>
+            <footer 
+              className="mt-2 text-base text-muted-foreground"
+              style={{ 
+                fontFamily: 'var(--font-gfs-didot), serif !important',
+                fontWeight: '400'
+              }}
+            >
+              — St. John of Damascus
+            </footer>
           </blockquote>
         </div>
 
