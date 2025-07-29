@@ -1,10 +1,23 @@
 // src/components/TopBar.tsx
 import React from 'react';
-export function TopBar() {
+
+interface TopBarProps {
+  message?: string;
+  show?: boolean;
+}
+
+export function TopBar({ 
+  message = "Welcome to St. Nicholas Orthodox Church, Grand Rapids, Michigan.",
+  show = true 
+}: TopBarProps) {
+  if (!show) {
+    return null;
+  }
+
   return (
-    <div className="bg-gray-800 text-white py-2 text-center text-sm">
+    <div className="bg-gray-800 text-white py-2 text-center text-base">
       <div className="container mx-auto px-4">
-        Welcome to St. Nicholas Orthodox Church, Grand Rapids, Michigan.
+        <span className="text-gray-100">{message}</span>
       </div>
     </div>
   );

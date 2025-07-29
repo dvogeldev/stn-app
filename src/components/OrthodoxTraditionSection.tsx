@@ -28,7 +28,7 @@ export const OrthodoxTraditionSection = () => {
           <p className="mt-4 text-lg text-muted-foreground mb-8 rounded-lg">
             Our liturgical worship echoes through the centuries, unchanged in its
             essence since the early Christian communities gathered in the catacombs of Rome.
-            The same prayers, the same reverence, the same <span className="italic text-secondary">living tradition</span>
+            The same prayers, the same reverence, the same <span className="italic text-secondary">living tradition </span>
             that sustained martyrs and saints now sustains us in our modern pilgrimage.
           </p>
           <blockquote 

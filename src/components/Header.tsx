@@ -5,49 +5,77 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { TopBar } from '@/components/TopBar';
 import { MobileNav } from '@/components/MobileNav';
+import { HeaderConfig, getHeaderConfig } from '@/lib/headerConfig';
 
-export function Header() {
+interface HeaderProps {
+  config?: HeaderConfig;
+}
+
+export function Header({ 
+  config = getHeaderConfig('default')
+}: HeaderProps) {
   const navLinks = [
     { href: '/our-faith', label: 'Our Faith' },
-    { href: '/our-community', label: 'Our Community' },
     { href: '/our-church', label: 'Our Church' },
-    { href: '/calendar', label: 'Calendar' },
+    { href: '/our-community', label: 'Our Community' },
   ];
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50 dark:bg-stone-900 dark:border-stone-700">
-      <TopBar />
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo or Site Title */}
-        <Link href="/" className="flex items-center space-x-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-          <Image
-            src="/assets/stn-icon-favicon.svg"
-            alt="St. Nicholas Orthodox Church Logo"
-            width={32}
-            height={32}
-            className="h-8 w-8"
-          />
-          <div>
-            <span>St. Nicholas Orthodox Church</span>
-            <p className="text-sm font-normal text-neutral-600 dark:text-neutral-300">Grand Rapids, MI</p>
+      <TopBar 
+        show={config.showTopBar} 
+        message={config.topBarMessage} 
+      />
+      <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
+        {/* Enhanced Logo and Branding */}
+        <Link href="/" className="flex items-center space-x-3 sm:space-x-4 group">
+          <div className="relative flex-shrink-0">
+            <Image
+              src="/assets/stn-icon-favicon.svg"
+              alt="St. Nicholas Orthodox Church Logo"
+              width={48}
+              height={48}
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-12 md:w-12 logo-icon transition-all duration-200 group-hover:scale-105"
+              priority
+            />
+          </div>
+          <div className="flex flex-col min-w-0">
+            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 truncate">
+              St. Nicholas Orthodox Church
+            </span>
+            <p className="text-sm sm:text-base font-medium text-muted-foreground leading-tight opacity-90">
+              Grand Rapids, MI
+            </p>
           </div>
         </Link>
 
-        <ul className="hidden md:flex space-x-6 items-center">
+        <ul className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="text-neutral-700 dark:text-white hover:text-teal-600 dark:hover:text-yellow-500 transition-colors">
+              <Link 
+                href={link.href} 
+                className="relative font-semibold text-foreground hover:text-primary transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-200 hover:after:w-full"
+              >
                 {link.label}
               </Link>
             </li>
           ))}
-          <li>
-            <Button asChild variant="secondary" size="sm">
-              <Link href="/dlive">Watch Live</Link>
+          {/* Call-to-action buttons with enhanced styling and explicit spacing */}
+          <li className="flex items-center">
+            <Button 
+              asChild 
+              variant="secondary" 
+              size="sm"
+              className="mr-4 hover:shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all duration-200 font-semibold transform-gpu"
+            >
+              <Link href="/dlive">WATCH LIVE</Link>
             </Button>
-          </li>
-          <li>
-            <Button asChild size="sm" variant="default">
-              <Link href="/new-visitors">New Here?</Link>
+            <Button 
+              asChild 
+              size="sm" 
+              variant="default"
+              className="hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-200 font-semibold transform-gpu"
+            >
+              <Link href="/new-visitors">NEW HERE?</Link>
             </Button>
           </li>
         </ul>
