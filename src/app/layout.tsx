@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Poppins, Merriweather, GFS_Didot } from "next/font/google";
+import { Poppins, Merriweather, Uncial_Antiqua } from "next/font/google";
 import "./globals.css";
 import { ApolloProvider } from "@/components/providers/apollo-provider";
 
@@ -19,10 +19,10 @@ const merriweather = Merriweather({
   display: "swap",
 });
 
-const gfsDidot = GFS_Didot({
-  subsets: ["greek", "latin"],
+const uncialAntiqua = Uncial_Antiqua({
+  subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-gfs-didot",
+  variable: "--font-uncial-antiqua",
   display: "swap",
   preload: true,
 });
@@ -42,15 +42,15 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/css2?family=GFS+Didot:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua:wght@400&display=swap"
           as="style"
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=GFS+Didot:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua:wght@400&display=swap"
         />
       </head>
-      <body className={`${poppins.variable} ${merriweather.variable} ${gfsDidot.variable} font-body`}>
+      <body className={`${poppins.variable} ${merriweather.variable} ${uncialAntiqua.variable} font-body`}>
         <ApolloProvider>
           {children}
         </ApolloProvider>

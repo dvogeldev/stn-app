@@ -34,16 +34,16 @@ export const OrthodoxTraditionSection = () => {
           <blockquote 
             className="text-lg text-foreground italic border-l-4 border-primary pl-4 py-2 mt-6 rounded-lg bg-card/50"
             style={{ 
-              fontFamily: 'var(--font-gfs-didot), serif !important',
+              fontFamily: 'var(--font-uncial-antiqua), serif !important',
               fontWeight: '400'
             }}
           >
             &ldquo;We have not changed the everlasting boundaries which our fathers have set, but we keep the tradition as we have received it.&rdquo;
             <footer 
-              className="mt-2 text-base text-muted-foreground"
+              className="mt-2 text-base text-muted-foreground font-bold italic"
               style={{ 
-                fontFamily: 'var(--font-gfs-didot), serif !important',
-                fontWeight: '400'
+                fontFamily: 'var(--font-poppins), sans-serif !important',
+                fontWeight: '700'
               }}
             >
               — St. John of Damascus

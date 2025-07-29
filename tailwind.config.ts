@@ -12,7 +12,7 @@ const config: Config = {
       fontFamily: {
         body: ["var(--font-poppins)", "sans-serif"],
         heading: ["var(--font-merriweather)", "serif"],
-        decorative: ["var(--font-gfs-didot)", "serif"],
+        decorative: ["var(--font-uncial-antiqua)", "serif"],
         sans: ["var(--font-poppins)", "sans-serif"],
         serif: ["var(--font-merriweather)", "serif"],
       },
