@@ -32,7 +32,7 @@ export function Header({
             <Logo className="h-10 w-10 sm:h-12 md:h-12 md:w-12" />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 truncate">
+            <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-brand font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 truncate">
               St. Nicholas Orthodox Church
             </span>
             <p className="text-xs sm:text-sm md:text-base font-medium text-muted-foreground leading-tight opacity-90">
