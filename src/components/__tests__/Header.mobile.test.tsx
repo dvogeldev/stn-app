@@ -1,19 +1,42 @@
+// The next/image mock intentionally uses a plain <img> element, which triggers
+// the `@next/next/no-img-element` rule. Disable it for this file.
+/* eslint-disable @next/next/no-img-element */
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from '../Header';
 
 // Mock Next.js components
 jest.mock('next/link', () => {
-  return ({ children, href, className, ...props }: any) => (
+  const NextLinkMock = (
+    {
+      children,
+      href,
+      className,
+      ...props
+    }: React.ComponentProps<'a'> & { href: string }
+  ) => (
     <a href={href} className={className} {...props}>
       {children}
     </a>
   );
+  NextLinkMock.displayName = 'NextLinkMock';
+  return NextLinkMock;
 });
 
 jest.mock('next/image', () => {
-  return ({ src, alt, className, ...props }: any) => (
-    <img src={src} alt={alt} className={className} {...props} />
-  );
+  const NextImageMock = (
+    {
+      src,
+      alt,
+      className,
+      ...props
+    }: Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
+      src: string;
+      alt: string;
+    }
+  ) => <img src={src} alt={alt} className={className} {...props} />;
+  NextImageMock.displayName = 'NextImageMock';
+  return NextImageMock;
 });
 
 // Mock components
@@ -23,10 +46,12 @@ jest.mock('../TopBar', () => ({
 }));
 
 jest.mock('../MobileNav', () => ({
-  MobileNav: ({ navLinks }: { navLinks: any[] }) => (
+  MobileNav: ({ navLinks }: { navLinks: { href: string; label: string }[] }) => (
     <div data-testid="mobile-nav">
-      {navLinks.map(link => (
-        <a key={link.href} href={link.href}>{link.label}</a>
+      {navLinks.map((link) => (
+        <a key={link.href} href={link.href}>
+          {link.label}
+        </a>
       ))}
     </div>
   )

@@ -39,17 +39,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua:wght@400&display=swap"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua:wght@400&display=swap"
-        />
-      </head>
       <body className={`${poppins.variable} ${merriweather.variable} ${uncialAntiqua.variable} font-body`}>
         <ApolloProvider>
           {children}

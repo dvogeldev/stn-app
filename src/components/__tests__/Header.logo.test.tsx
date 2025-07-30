@@ -1,27 +1,52 @@
+// The next/image mock intentionally uses a plain <img> element, which triggers
+// the `@next/next/no-img-element` rule. Disable it for this file.
+/* eslint-disable @next/next/no-img-element */
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from '../Header';
-import { getHeaderConfig } from '@/lib/headerConfig';
 
 // Mock Next.js components
 jest.mock('next/link', () => {
-  return ({ children, href, ...props }: any) => (
+  const NextLinkMock = (
+    {
+      children,
+      href,
+      ...props
+    }: React.ComponentProps<'a'> & { href: string }
+  ) => (
     <a href={href} {...props}>
       {children}
     </a>
   );
+  NextLinkMock.displayName = 'NextLinkMock';
+  return NextLinkMock;
 });
 
 jest.mock('next/image', () => {
-  return ({ src, alt, width, height, className, ...props }: any) => (
-    <img 
-      src={src} 
-      alt={alt} 
-      width={width} 
-      height={height} 
+  const NextImageMock = (
+    {
+      src,
+      alt,
+      width,
+      height,
+      className,
+      ...props
+    }: Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
+      src: string;
+      alt: string;
+    }
+  ) => (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
       className={className}
-      {...props} 
+      {...props}
     />
   );
+  NextImageMock.displayName = 'NextImageMock';
+  return NextImageMock;
 });
 
 // Mock the header config
