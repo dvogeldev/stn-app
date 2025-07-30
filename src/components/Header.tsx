@@ -11,7 +11,7 @@ interface HeaderProps {
   config?: HeaderConfig;
 }
 
-export function Header({ 
+export function Header({
   config = getHeaderConfig('default')
 }: HeaderProps) {
   const navLinks = [
@@ -20,10 +20,10 @@ export function Header({
     { href: '/our-community', label: 'Our Community' },
   ];
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-200 bg-stone-50 dark:bg-stone-900 dark:border-stone-700">
-      <TopBar 
-        show={config.showTopBar} 
-        message={config.topBarMessage} 
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
+      <TopBar
+        show={config.showTopBar}
+        message={config.topBarMessage}
       />
       <nav className="mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
         {/* Enhanced Logo and Branding with improved mobile touch targets */}
@@ -44,8 +44,8 @@ export function Header({
         <ul className="hidden lg:flex space-x-6 lg:space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link 
-                href={link.href} 
+              <Link
+                href={link.href}
                 className="relative min-h-[44px] flex items-center px-2 py-2 font-semibold text-foreground hover:text-primary transition-colors duration-200 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-200 hover:after:w-[calc(100%-1rem)]"
               >
                 {link.label}
@@ -54,17 +54,17 @@ export function Header({
           ))}
           {/* Call-to-action buttons with enhanced styling and explicit spacing */}
           <li className="flex items-center gap-3 lg:gap-4">
-            <Button 
-              asChild 
-              variant="secondary" 
+            <Button
+              asChild
+              variant="secondary"
               size="default"
               className="min-h-[44px] hover:shadow-lg hover:shadow-secondary/30 hover:scale-[1.02] transition-all duration-200 font-semibold transform-gpu"
             >
               <Link href="/dlive">WATCH LIVE</Link>
             </Button>
-            <Button 
-              asChild 
-              size="default" 
+            <Button
+              asChild
+              size="default"
               variant="default"
               className="min-h-[44px] hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02] transition-all duration-200 font-semibold transform-gpu"
             >
