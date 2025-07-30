@@ -41,7 +41,7 @@ export function Header({
           </div>
         </Link>
 
-        <ul className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+        <ul className="hidden lg:flex space-x-6 lg:space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link 
