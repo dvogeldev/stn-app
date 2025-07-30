@@ -1,7 +1,6 @@
 // src/components/Header.tsx
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { TopBar } from '@/components/TopBar';
 import { MobileNav } from '@/components/MobileNav';
