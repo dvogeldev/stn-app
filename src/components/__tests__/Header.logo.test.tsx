@@ -1,6 +1,4 @@
-// The next/image mock intentionally uses a plain <img> element, which triggers
-// the `@next/next/no-img-element` rule. Disable it for this file.
-/* eslint-disable @next/next/no-img-element */
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Header } from '../Header';
