@@ -18,7 +18,7 @@ interface MobileNavProps {
 
 export function MobileNav({ navLinks }: MobileNavProps) {
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Button 
