@@ -249,6 +249,10 @@ html:has(.hide-header) {
 }
 
 @layer base {
+  /* Responsive root font size for improved readability */
+  html {
+    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.125rem);
+  }
   * {
     @apply border-border outline-ring/50;
   }

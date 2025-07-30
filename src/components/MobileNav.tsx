@@ -21,7 +21,7 @@ export function MobileNav({ navLinks }: MobileNavProps) {
     <div className="md:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" className="size-11">
             <MenuIcon className="h-6 w-6" />
             <span className="sr-only">Toggle mobile menu</span>
           </Button>
@@ -32,7 +32,7 @@ export function MobileNav({ navLinks }: MobileNavProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium text-neutral-700 dark:text-white hover:text-teal-600 dark:hover:text-yellow-500 transition-colors"
+                className="text-lg font-medium text-neutral-700 dark:text-white hover:text-teal-600 dark:hover:text-yellow-500 transition-colors py-4"
               >
                 {link.label}
               </Link>
