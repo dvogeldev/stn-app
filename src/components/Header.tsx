@@ -25,7 +25,7 @@ export function Header({
         show={config.showTopBar} 
         message={config.topBarMessage} 
       />
-      <nav className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
+      <nav className="mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
         {/* Enhanced Logo and Branding with improved mobile touch targets */}
         <Link href="/" className="flex items-center space-x-3 sm:space-x-4 group min-h-[44px] py-1">
           <div className="relative flex-shrink-0">
