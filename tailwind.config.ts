@@ -13,7 +13,7 @@ const config: Config = {
         body: ["var(--font-poppins)", "sans-serif"],
         heading: ["var(--font-merriweather)", "serif"],
         decorative: ["var(--font-uncial-antiqua)", "serif"],
-        brand: ["var(--font-libre-baskerville)", "serif"],
+        brand: ["LibreBaskerville", "serif"],
         sans: ["var(--font-poppins)", "sans-serif"],
         serif: ["var(--font-merriweather)", "serif"],
       },

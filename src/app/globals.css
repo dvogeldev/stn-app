@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Custom font face for Libre Baskerville */
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('/fonts/librebaskerville-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -49,10 +58,12 @@
 :root {
   --radius: 0.625rem;
   --gold: hsl(40, 70%, 50%);
-  
+
   /* Logo color variants */
-  --logo-light: hsl(230, 30%, 70%); /* #b6bfed for dark backgrounds */
-  --logo-dark: hsl(230, 30%, 35%);  /* #454e75 for light backgrounds */
+  --logo-light: hsl(230, 30%, 70%);
+  /* #b6bfed for dark backgrounds */
+  --logo-dark: hsl(230, 30%, 35%);
+  /* #454e75 for light backgrounds */
   /* #CDA434 - Divine light */
   --teal: hsl(165, 50%, 35%);
   /* #2E7D6B - Spiritual serenity */
@@ -166,7 +177,8 @@
 
 /* Hide header on 404 page - direct approach */
 .hide-header {
-  margin-top: -80px; /* Adjust based on header height */
+  margin-top: -80px;
+  /* Adjust based on header height */
 }
 
 body:has(.hide-header) header {
@@ -242,7 +254,7 @@ html:has(.hide-header) {
   .logo-icon {
     filter: contrast(1.2) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
   }
-  
+
   [data-theme="dark"] .logo-icon,
   .dark .logo-icon {
     filter: contrast(1.2) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
@@ -259,28 +271,34 @@ html:has(.hide-header) {
   }
 
   /* Apply serif font to all headings */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-merriweather), serif;
   }
 }
 
 /* Mobile-first responsive typography and touch targets */
 @layer utilities {
+
   /* Ensure minimum touch target sizes on mobile */
   .touch-target {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* Mobile-optimized font scaling */
   .mobile-text-scale {
     font-size: clamp(0.875rem, 2.5vw, 1rem);
   }
-  
+
   .mobile-heading-scale {
     font-size: clamp(1.125rem, 4vw, 1.5rem);
   }
-  
+
   .mobile-logo-scale {
     font-size: clamp(1rem, 4.5vw, 1.25rem);
   }
@@ -288,29 +306,30 @@ html:has(.hide-header) {
 
 /* Enhanced mobile navigation improvements */
 @media (max-width: 768px) {
+
   /* Improve header spacing on mobile */
   .mobile-header-spacing {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  
+
   /* Ensure adequate spacing between interactive elements */
-  .mobile-nav-spacing > * + * {
+  .mobile-nav-spacing>*+* {
     margin-top: 0.75rem;
   }
-  
+
   /* Improve button touch targets on mobile */
   .mobile-button {
     min-height: 44px;
     padding: 0.75rem 1rem;
     font-size: 1rem;
   }
-  
+
   /* Enhanced mobile menu drawer */
   .mobile-drawer-content {
     padding: 1.5rem 1rem;
   }
-  
+
   .mobile-drawer-link {
     min-height: 44px;
     padding: 0.75rem 1rem;
@@ -324,11 +343,12 @@ html:has(.hide-header) {
 
 /* Tablet-specific optimizations */
 @media (min-width: 768px) and (max-width: 1024px) {
+
   /* Tablet-optimized spacing */
   .tablet-spacing {
     padding: 1.25rem 1.5rem;
   }
-  
+
   /* Tablet font scaling */
   .tablet-text-scale {
     font-size: clamp(0.9375rem, 2vw, 1.125rem);

@@ -1,7 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Poppins, Merriweather, Uncial_Antiqua } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ApolloProvider } from "@/components/providers/apollo-provider";
 
@@ -28,13 +27,7 @@ const uncialAntiqua = Uncial_Antiqua({
   preload: true,
 });
 
-const libreBaskerville = localFont({
-  src: "../../public/fonts/librebaskerville-bold-webfont.woff2",
-  weight: "700",
-  variable: "--font-libre-baskerville",
-  display: "swap",
-  preload: true,
-});
+
 
 export const metadata: Metadata = {
   title: "STN App",
@@ -48,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${merriweather.variable} ${uncialAntiqua.variable} ${libreBaskerville.variable} font-body`}>
+      <body className={`${poppins.variable} ${merriweather.variable} ${uncialAntiqua.variable} font-body`}>
         <ApolloProvider>
           {children}
         </ApolloProvider>
