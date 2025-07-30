@@ -35,7 +35,7 @@
   - Implement proper contrast for logo icon in both light and dark themes
   - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-- [ ] 6. Implement responsive improvements for mobile experience
+- [-] 6. Implement responsive improvements for mobile experience
   - Ensure all touch targets meet minimum 44px size requirement
   - Test improved spacing works effectively on mobile devices
   - Verify mobile navigation drawer integrates well with header improvements

@@ -262,3 +262,74 @@ html:has(.hide-header) {
     font-family: var(--font-merriweather), serif;
   }
 }
+
+/* Mobile-first responsive typography and touch targets */
+@layer utilities {
+  /* Ensure minimum touch target sizes on mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile-optimized font scaling */
+  .mobile-text-scale {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  .mobile-heading-scale {
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+  }
+  
+  .mobile-logo-scale {
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+  }
+}
+
+/* Enhanced mobile navigation improvements */
+@media (max-width: 768px) {
+  /* Improve header spacing on mobile */
+  .mobile-header-spacing {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Ensure adequate spacing between interactive elements */
+  .mobile-nav-spacing > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  /* Improve button touch targets on mobile */
+  .mobile-button {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Enhanced mobile menu drawer */
+  .mobile-drawer-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .mobile-drawer-link {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet-optimized spacing */
+  .tablet-spacing {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  /* Tablet font scaling */
+  .tablet-text-scale {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  }
+}
