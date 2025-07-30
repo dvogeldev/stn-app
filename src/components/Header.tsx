@@ -1,7 +1,6 @@
 // src/components/Header.tsx
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { TopBar } from '@/components/TopBar';
 import { MobileNav } from '@/components/MobileNav';
@@ -29,9 +28,9 @@ export function Header({
       <nav className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
         {/* Enhanced Logo and Branding with improved mobile touch targets */}
         <Link href="/" className="flex items-center space-x-3 sm:space-x-4 group min-h-[44px] py-1">
-	  <div className="relative flex-shrink-0">
-	    <Logo className="h-10 w-10 sm:h-12 md:h-12 md:w12"/>
-	  </div>
+          <div className="relative flex-shrink-0">
+            <Logo className="h-10 w-10 sm:h-12 md:h-12 md:w-12" />
+          </div>
           <div className="flex flex-col min-w-0">
             <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 truncate">
               St. Nicholas Orthodox Church
