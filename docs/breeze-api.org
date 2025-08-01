@@ -1,0 +1,4 @@
+* Breeze API
+** Key
+Key is stored in VaultWarden
+**
