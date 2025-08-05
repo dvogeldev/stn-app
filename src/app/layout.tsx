@@ -30,8 +30,31 @@ const uncialAntiqua = Uncial_Antiqua({
 
 
 export const metadata: Metadata = {
-  title: "STN App",
-  description: "A Next.js frontend for WordPress with GraphQL",
+  title: "St. Nicholas Antiochian Orthodox Church - Grand Rapids, MI",
+  description: 'Welcome to St. Nicholas Orthodox Church. Experience ancient Christian worship in Grand Rapids. Join us for Divine Liturgy, Vespers, and community.',
+  keywords: ['Orthodox Church Grand Rapids', 'Antiochian Orthodox', 'Divine Liturgy', 'Orthodox Christianity Michigan'],
+  openGraph: {
+    title: 'St. Nicholas Antiochian Orthodox Church - MI',
+    description: 'Ancient faith, living community in Grand Rapids',
+    url: 'https://stnicholasgr.com',
+    siteName: 'St. Nicholas Antiochian Orthodox Church',
+    images: [
+      {
+        url:'/assests/og-image.jpeg',
+        width: 1200,
+        height: 630,
+        alt:'Some BS',
+      },
+    ],
+    locale: "en_US",
+    type: 'website',
+  },
+  twitter: {
+    card: 'St. Nicholas Antiochian Churc',
+    title: 'St. Nicholas Antiochian Orthodox Church - Grand Rapids, MI',
+    description: 'Welcome to St. Nicholas Orthodox Church. Experience ancient Christian worship in Grand Rapids. Join us for Divine Liturgy, Vespers, and community.',
+    images: ["https://stnicholasgr.com/assests/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
