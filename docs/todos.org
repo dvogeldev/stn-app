@@ -1,0 +1,11 @@
+** TODO: Add og-image to site meta
+
+`/og-image.jpg` is simply a placeholder path—there is no actual file yet.
+You’ll need to create a 1200 × 630 px (or 1.91:1 ratio) image that contains:
+
+- St. Nicholas church name and logo
+- “Grand Rapids, MI”
+- A welcoming photo of the church or iconostasis
+- Brand colors (teal, gold, off-white)
+
+Save it as `public/og-image.jpg` in the Next.js repo so the build can serve it at `https://app.stnicholasgr.com/og-image.jpg`.
