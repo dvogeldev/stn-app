@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'St. Nicholas Antiochian Churc',
+    card: 'summary_large_image',
     title: 'St. Nicholas Antiochian Orthodox Church - Grand Rapids, MI',
     description: 'Welcome to St. Nicholas Orthodox Church. Experience ancient Christian worship in Grand Rapids. Join us for Divine Liturgy, Vespers, and community.',
     images: ["https://stnicholasgr.com/assests/og-image.jpg"],
